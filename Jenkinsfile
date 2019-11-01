@@ -34,12 +34,10 @@ pipeline {
 	    deploy adapters: [tomcat8(credentialsId: 'b499ca1c-331a-4290-9e7e-dab543d4dd2c', path: '', url: 'http://13.235.78.19:8080/')], contextPath: 'webapp.war', war: '**/*.war'
 
 	     }
-          }  
+         }  
       }   
 	   post {
-            
-		// If Maven was able to run the tests, even if some of the test
-                      
+                               
 		success {
                
 		junit '**/target/surefire-reports/TEST-*.xml'
